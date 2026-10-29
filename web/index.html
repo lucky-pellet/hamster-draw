@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hamster Draw</title>
+    <meta
+      name="description"
+      content="Provably fair raffles and giveaways on Sepolia. The winners come from the first round Squeektoshi the hamster runs after the raffle closes. Try a practice draw with no wallet."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hamster Draw: a real hamster picks your raffle winners" />
+    <meta
+      property="og:description"
+      content="Paste a list and let a round Squeektoshi ran on the Squeekchain wheel pick the winners, with a proof anyone can check."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#257a52" />
+    <script>
+      // Stream view (?embed=1, optionally &bg=transparent): mark the page before its first paint, so an OBS
+      // source never flashes the cream page. The app reads the same class to render the stream view.
+      (function () {
+        var q = new URLSearchParams(window.location.search);
+        if (!q.has("embed") || q.get("embed") === "0") return;
+        document.documentElement.classList.add("is-embed");
+        if (/^(transparent|none)$/i.test(q.get("bg") || "")) document.documentElement.classList.add("is-clear");
+      })();
+    </script>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Archivo+Black&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="./styles/booth.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "preact": "https://esm.sh/preact@10.29.8",
+          "preact/hooks": "https://esm.sh/preact@10.29.8/hooks",
+          "htm": "https://esm.sh/htm@3.1.1",
+          "viem": "https://esm.sh/viem@2.21.55"
+        }
+      }
+    </script>
+    <link rel="modulepreload" href="https://esm.sh/viem@2.21.55" />
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the raffles</a>
+    <div id="app">
+      <p class="boot-note">Setting up the booth&hellip;</p>
+    </div>
+    <noscript>
+      <p class="boot-note">Hamster Draw runs in your browser and needs JavaScript to read the chain.</p>
+    </noscript>
+  </body>
+</html>

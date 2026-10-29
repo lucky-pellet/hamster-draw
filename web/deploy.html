@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deploy Hamster Draw</title>
+    <meta name="description" content="Deploy the HamsterDraw contract to Sepolia from your own wallet." />
+    <meta name="theme-color" content="#257a52" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Archivo+Black&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="./styles/booth.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "preact": "https://esm.sh/preact@10.29.8",
+          "preact/hooks": "https://esm.sh/preact@10.29.8/hooks",
+          "htm": "https://esm.sh/htm@3.1.1",
+          "viem": "https://esm.sh/viem@2.21.55"
+        }
+      }
+    </script>
+    <link rel="modulepreload" href="https://esm.sh/viem@2.21.55" />
+    <script type="module" src="./src/deploy.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the deploy steps</a>
+    <div id="app">
+      <p class="boot-note">Unlocking the back office&hellip;</p>
+    </div>
+    <noscript>
+      <p class="boot-note">Deploying needs JavaScript and a browser wallet.</p>
+    </noscript>
+  </body>
+</html>

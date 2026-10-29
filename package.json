@@ -1,0 +1,25 @@
+{
+  "name": "hamster-draw",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Provably fair raffles and giveaways where Squeektoshi the hamster picks the winners.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "build": "hardhat compile && node scripts/export-artifact.js",
+    "test": "hardhat test",
+    "test:fork": "hardhat --config hardhat.fork.config.cjs test",
+    "serve": "node scripts/serve.js",
+    "demo:chain": "hardhat node",
+    "demo:seed": "hardhat run scripts/local-demo.js --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-viem": "2.1.5",
+    "hardhat": "2.29.1",
+    "viem": "2.21.55"
+  }
+}
